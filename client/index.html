@@ -1,0 +1,62 @@
+<html ng-app='myApp'>
+<head>
+	<title>Exercise 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
+	<script
+	  src="https://code.jquery.com/jquery-3.1.1.js"
+	  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+	  crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+	<script type="text/javascript" src="angular/app.js"></script>
+	<script type="text/javascript" src="angular/factories/communication-factory.js"></script>
+	<script type="text/javascript" src="angular/factories/retail-factory.js"></script>
+	<script type="text/javascript" src="angular/factories/financial-factory.js"></script>
+	<script type="text/javascript" src="angular/factories/about-factory.js"></script>
+
+	<script type="text/javascript" src="angular/controllers/communications-controller.js"></script>
+	<script type="text/javascript" src="angular/controllers/retails-controller.js"></script>
+	<script type="text/javascript" src="angular/controllers/financials-controller.js"></script>
+	<script type="text/javascript" src="angular/controllers/abouts-controller.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div id="header" class="col-md-12">
+				<h1>OFD Industry Portal</h1>
+				<h4>Expand your knowledge<h4>
+			</div>
+		</div>
+		<div class="row" class="col-md-12">
+			<ul class="navigation">
+			  <li class="selected"><i class="fa fa-comments" aria-hidden="true"></i><a href="#/">COMMUNICATIONS</a></li>
+			  <li><i class="fa fa-shopping-cart" aria-hidden="true"></i><a href="#/retail">RETAIL</a></li>
+			  <li><i class="fa fa-usd" aria-hidden="true"></i><a href="#/financial-services">FINANCIAL SERVICES</a></li>
+			  <li><i class="fa fa-video-camera" aria-hidden="true"></i><a href="#/about">ABOUT</a></li>
+			</ul>
+		</div>
+		<div class="display" ng-view="">
+		</div>
+	</div>
+</body>
+<script>
+	$(document).ready(function(){
+		$('.navigation a').click(function() {
+		    $('.navigation li').removeClass('selected');
+		    $(this).parent().addClass('selected');
+		});
+	})
+</script>
+</html>

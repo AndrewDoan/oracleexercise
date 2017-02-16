@@ -1,0 +1,19 @@
+<div ng-controller="aboutsController" class="col-md-offset-2 col-md-8">
+	<input class="searchbar" type="text" ng-model="filter_name" placeholder="Search">
+	<table>
+		<thead>
+			<tr>
+				<th class="table-title">Title</th>
+				<th class="table-description">Description</th>
+			</tr>
+		</thead>
+	</table>
+	<table class="scrollTable">
+		<tbody>
+			<tr ng-repeat="about in abouts | filter: filter_name">
+				<td class="tableTitle" ng-class-odd="'odd'">{{about.title}} <i ng-if="about.file_type == 'PDF'" class="fa fa-file-pdf-o" aria-hidden="true"></i></td>
+				<td class="tableDescription" ng-class-odd="'odd'">{{about.description}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
